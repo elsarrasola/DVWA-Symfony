@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+    webserver:
+        image: nginx:stable-alpine
+        container_name: webserver
+        ports:
+            - "9081:80"
+        volumes:
+            - ../dvwa:/var/www/html:ro
+            - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        depends_on:
+            - php-fpm
+
+    php-fpm:
+        image: php:8.3-fpm-alpine
+        container_name: php-fpm
+        working_dir: /var/www/html/
+        ports:
+            - 9000:9000
+        volumes:
+            - ../dvwa:/var/www/html
+
+    mariadb:
+        image: mariadb:lts
+        networks:
+            - devNet
+        container_name: mariadb-container
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root_password
+            MYSQL_DATABASE: dvwa-symfony-db
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+        volumes:
+          - ./db-data:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin:apache
+        networks:
+            - devNet
+        container_name: pma-container
+        ports:
+          - "8081:80"
+        environment:
+            PMA_HOST: mariadb
+            MYSQL_ROOT_PASSWORD: root_password
+        depends_on:
+            - mariadb
+
+networks:
+  devNet:
