@@ -1,3 +1,7 @@
 body {
-    background-color: skyblue;
+    background-color: white;
+}
+
+.to-do {
+    color: #AAA;
 }

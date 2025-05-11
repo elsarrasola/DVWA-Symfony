@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <h1>Damn Vulnerable Web Application Symfony</h1>
+        <p>Also known as "DVWA Symfony" this is the most vulnerable Symfony project possible. In this project, you can find the most common vulnerabilities you can have in your symfony roject.</p>
+        <p>Note to developers: if you see one of the vulnerabilities above, <strong class="to-do">in grey</strong>, with "(to-do)" beside it, it is because the vulnerability is to fully coded. If you want to help it or or want to make another vulnerability, <a href="https://github.com/DVWAProject/DVWA-Symfony/issues">make a pull request !</a></p>
+
+        <h2>"Classic" website</h2>
+            <div id="classic-website" class="to-do">
+                <h3>Poor password policy (to-do)</h3>
+                <p>You can find a weak password policy <a href="/allow_weak_password">here</a>.</p>
+
+                <h3>SQLi (to-do)</h3>
+                <p>For SQL Injection (SQLi), see <a href="/sqli">here</a>.</p>
+
+                <h3>MFA bypass (to-do)</h3>
+                <p>This page shows you how your code can help to bypass the Multi-Factor Authentication (MFA). See it <a href="/mfa_bypass">here</a>.</p>
+
+                <h3>composer.lock exposure (to-do)</h3>
+                <p>Bad configuration can expose your composer.lock file configuration, and all important information. Read more <a href="/composer_lock_exposed">Here</a>.</p>
+
+                <h3>XSS (to-do)</h3>
+                <p>Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected. <a href="/xss">Here</a>.</p>
+
+                <h3>IDOR (to-do)</h3>
+                <p>Insecure Direct Object Reference (IDOR), append when you make an object refererence to easy to find. See how here <a href="/idor">here</a>.</p>
+
+                <h3>CAPTCHA bypass (to-do)</h3>
+                <p>CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) can be circumvented if implemented badly . See how <a href="/captcha_bypass">here</a>.</p>
+
+                <h3>File upload (to-do)</h3>
+                <p>The file upload extension, allows the hacker to upload files that the server can execute. <a href="/file_upload_vuln">Here</a>.</p>
+
+                <h3>Bypass anti brute-force solution (to-do)</h3>
+                <p>A hack that avoids the brute-force security. How ? See it <a href="/bypass_brute_force">here</a>.</p>
+
+                <h3>Bad CORS (to-do)</h3>
+                <p>A vulnerability in the Cross-Site Origin Policy (CORS) allows hackers to steal data, inject XSS and do some other fun stuff. <a href="/bad_cors">Here</a>.</p>
+            </div>
+
+        <hr/>
+        <h2>API/Webservice</h2>
+            <div id="api-website" class="to-do">
+                <h3>Bad logging (to-do)</h3>
+                <p>Show clear password in the logs, <a href="/bad_logging">here</a>.</p>
+                
+                <h3>CSRF (to-do)</h3>
+                <p>The Cross Site Request Forgery (CSRF) vulnerability tricks the user into using their credentials on a fake site. See it <a href="/csrf">here</a>.</p>
+
+                <h3>JWT (to-do)</h3>
+                <p>The JSON Web Token (JWT) vulnerability can be exploited if the token is not properly verified and can give the hacker full access. See it <a href="/jwt">here</a>.</p>
+
+                <h3>Weak token generation (to-do)</h3>
+                <p>Makes the token generation easy to guess and easier for the hacker to spoof. See it <a href="/weak_token_generation">here</a>.</p>
+
+                <h3>SSRF (to-do)</h3>
+                <p>The Server-Side Request Forgery (SSRF) vulnerability can allow to the hacker to gain access to the server. <a href="/ssrf">This way</a>.</p>
+
+                <h3>Sensitive data returned (to-do)</h3>
+                <p>The API is so well vulnerable, it can return realy sensitive data like user password. <a href="/sensitive_data">Here</a>.</p>
+            </div>
+    </body>
+</html>
